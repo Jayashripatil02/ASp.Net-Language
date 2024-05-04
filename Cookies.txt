@@ -1,0 +1,49 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="Cookies.WebForm1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+           <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Style="top: 231px;
+ left: 476px; position: absolute; height: 26px; width: 116px" Text="Show Cookie" /> 
+        </div>
+    </form>
+</body>
+</html>
+
+.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace Cookies
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            foreach (string str in Request.Headers)
+            {
+                Response.Write(str + "=" + Request.Headers[str] + "<br>");
+            }
+            Response.Write("________________________________________________" + "<br>");
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            foreach (string str in Request.Cookies["test"].Values)
+            {
+                Response.Write(str + "=" + Request.Cookies["test"].Values[str] + "<br>");
+            }
+        }
+    }
+}

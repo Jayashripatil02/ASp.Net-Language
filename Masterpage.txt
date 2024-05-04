@@ -1,0 +1,63 @@
+<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="WebApplication12.WebForm1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <table>
+    <tr>
+      <th>
+         <h1> Student Information </h1> 
+      </th> 
+    </tr> 
+    <tr> 
+       <td> 
+           <b> Name: Chetan Nargund </b>
+      </td >
+    </tr>
+    <tr > 
+        <td>
+        <b> College: AIT </b> 
+        </td>
+    </tr>
+    <tr>
+<td>
+     <b > City: Bangalore </b>
+</td > 
+
+    </tr> 
+
+    </table> 
+</asp:Content>
+
+Master
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplication12.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table border="1">
+                <tr>
+                    <td colspan="2" style="text-align: center">  
+                    <h1>Header</h1>
+                    </td>
+               </tr>
+                <tr>
+                    <td style="text-align: center; height: 480px; width: 250px">
+                    <h1>Menu</h1>
+                    </td>
+                    <td style="text-align: center; height: 480px; width: 700px">
+                     <asp:ContentPlaceHolder ID="MainContentPlaceHolder1" runat="server">
+                         <h1>Footer</h1>
+                     </asp:ContentPlaceHolder>
+                    </td>
+                    </tr>
+                </table>
+        </div>
+    </form>
+</body>
+</html>
